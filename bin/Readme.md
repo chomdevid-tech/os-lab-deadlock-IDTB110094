@@ -15,7 +15,7 @@ The output of df -h | grep loop shows that the virtual image files have been suc
 ### Observation 
 The scripts freeze because they each hold one resource and wait for the other, creating a circular wait. sync_up locks Vault Alpha and waits for Vault Beta, while sync_down locks Vault Beta and waits for Vault Alpha. Since neither releases their initial lock, both processes are indefinitely blocked, demonstrating a classic OS deadlock scenario.
 ![Level 3 Output](image/Level3.png)
-![Level 3 Output](image/Level3(2).png)
+![Level 3 Output](image/Level3%20(2).png)
 
 ## Level 4
 ### Observation 
