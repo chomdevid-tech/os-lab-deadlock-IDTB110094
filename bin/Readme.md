@@ -8,7 +8,7 @@
 ## Level1
 ### Observation 
 The output of df -h | grep loop shows that the virtual image files have been successfully attached as loop devices (/dev/loop30 and /dev/loop31) and mounted to the filesystem. Each device has a usable size of approximately 5.4MB, with minimal space used, confirming that the virtual drives are correctly formatted and ready for use.
-![Level1 Output](/image/Level1)
+![Level1 Output](C:\Users\U-ser\OneDrive\Pictures\Screenshots\os-lab-deadlock-IDTB110094\image\Level1)
 
 
 ## Level 3
