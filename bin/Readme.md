@@ -8,7 +8,7 @@
 ## Level 1
 ### Observation 
 The output of df -h | grep loop shows that the virtual image files have been successfully attached as loop devices (/dev/loop30 and /dev/loop31) and mounted to the filesystem. Each device has a usable size of approximately 5.4MB, with minimal space used, confirming that the virtual drives are correctly formatted and ready for use.
-![Level 1 Output](image/Level1.png)
+![Level1 Output](image/Level1.png)
 
 
 ## Level 3
