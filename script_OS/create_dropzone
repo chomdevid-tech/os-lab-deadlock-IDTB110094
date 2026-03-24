@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Ask operator for folder name
+read -p "Enter drop zone folder name: " FOLDER_NAME
+
+# Validate not empty
+if [ -z "$FOLDER_NAME" ]; then
+    echo "Error: folder name cannot be empty."
+    exit 1
+fi
+
+DROPZONE="$HOME/$FOLDER_NAME"
+
+# Create the directory
+mkdir -p "$DROPZONE"
+
+# Allow anyone to write and upload files
+chmod o+wx "$DROPZONE"
+
+# Apply sticky bit — users can only delete their OWN files
+chmod +t "$DROPZONE"
+
+echo "Drop zone created: $DROPZONE"
+echo "Permissions: $(ls -ld "$DROPZONE")"

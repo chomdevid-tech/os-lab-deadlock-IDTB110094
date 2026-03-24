@@ -1,0 +1,9 @@
+(
+echo "[Beta] Locking Alpha first..."
+flock -x 200
+sleep 2
+echo "[Beta] Locking own Beta vault..."
+flock -x 201
+echo "[Beta] Sync complete!"
+) 200>/home/g11-chhun-chamroen/os-lab-deadlock/public_dr_alpha/vault.lock \
+  201>$HOME/os-lab-deadlock/public_dr_beta/vault.lock

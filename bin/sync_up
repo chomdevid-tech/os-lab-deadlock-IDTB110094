@@ -1,0 +1,7 @@
+(
+echo "[Sync_UP] Locking Vault Alpha..."
+flock -x 200
+echo "[Sync_UP] Vault Alpha locked..."
+sleep 5  # hold lock longer to test timeout
+echo "[Sync_UP] Done with Alpha."
+) 200>/home/g11-chom-devid/os-lab-deadlock/vault_alpha.lock

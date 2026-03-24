@@ -1,0 +1,11 @@
+#!/bin/bash
+
+secrets=("Dragon" "Matrix" "Quantum" "Neptune" "Phoenix")
+
+random_secret=${secrets[$RANDOM % ${#secrets[@]}]}
+
+current_time=$(date +"%Y-%m-%d %H:%M:%S")
+
+echo "Secret Word: $random_secret - $current_time" > $HOME/public_outbox/secret.txt
+
+echo "Secret broadcasted successfully!"

@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Loop through all files in current directory
+for FILE in *; do
+    # Skip if it is a directory not a file
+    [ -f "$FILE" ] || continue
+
+    # Extract extension — everything after the last dot
+    EXTENSION="${FILE##*.}"
+
+    # Skip files with no extension
+    if [ "$EXTENSION" = "$FILE" ]; then
+        echo "Skipping $FILE — no extension found."
+        continue
+    fi
+
+    # Create folder for this extension if it doesn't exist
+    mkdir -p "$EXTENSION"
+
+    # Move file into its extension folder
+    mv "$FILE" "$EXTENSION/"
+    echo "Moved $FILE → $EXTENSION/"
+done
+
+echo "Cleanup complete!"

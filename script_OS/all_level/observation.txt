@@ -1,0 +1,7 @@
+Run 1: 98
+Run 2: 86
+Run 3: 84
+Run 4: 82
+Run 5: 80
+
+Explanation: The inventory value differs on every run because the OS process scheduler decides when each bot in bot_swarm gets CPU time, and that order is unpredictable every time. When multiple bots read inventory.txt at the same moment before any of them writes back, one bot’s update can overwrite another, causing some transactions to be lost entirely. The repeated /home/g11-chom-devid/bin/buy_widget: line 38: [: : integer expression expected errors confirm that some bots even read an empty or incomplete file mid-write, which is a direct symptom of the TOC-TOU (Time-Of-Check to Time-Of-Use) race condition.
